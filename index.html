@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sai Kurmana, MBBS MPH MS | Healthcare Data & AI Executive</title>
+    <meta name="description" content="Healthcare data and technology executive specializing in AI/ML, population health analytics, and data modernization">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #0A4D68;
+            --primary-light: #088395;
+            --accent: #05BFDB;
+            --accent-warm: #E67E22;
+            --bg-dark: #0A1929;
+            --bg-light: #F8FAFB;
+            --text-dark: #1A2332;
+            --text-light: #64748B;
+            --border: #E2E8F0;
+            --success: #10B981;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Animated Background Grid */
+        .bg-grid {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(90deg, rgba(8, 131, 149, 0.03) 1px, transparent 1px),
+                linear-gradient(rgba(8, 131, 149, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            z-index: -1;
+            animation: gridScroll 20s linear infinite;
+        }
+        
+        @keyframes gridScroll {
+            0% { background-position: 0 0; }
+            100% { background-position: 50px 50px; }
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(248, 250, 251, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            animation: slideDown 0.5s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 6rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent 0%, rgba(8, 131, 149, 0.05) 100%);
+            z-index: -1;
+        }
+        
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            animation: fadeIn 1s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hero-tag {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent), var(--primary-light));
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            animation: slideIn 0.8s ease-out 0.2s backwards;
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            animation: slideIn 0.8s ease-out 0.3s backwards;
+        }
+        
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            max-width: 700px;
+            animation: slideIn 0.8s ease-out 0.4s backwards;
+        }
+        
+        .credentials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+            animation: slideIn 0.8s ease-out 0.5s backwards;
+        }
+        
+        .credential-badge {
+            background: white;
+            border: 2px solid var(--border);
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .credential-badge:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(8, 131, 149, 0.15);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            animation: slideIn 0.8s ease-out 0.6s backwards;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            box-shadow: 0 4px 12px rgba(8, 131, 149, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(8, 131, 149, 0.4);
+        }
+        
+        .btn-secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* Stats Section */
+        .stats {
+            background: white;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 3rem 2rem;
+            margin: 4rem 0;
+        }
+        
+        .stats-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out backwards;
+        }
+        
+        .stat-item:nth-child(1) { animation-delay: 0.1s; }
+        .stat-item:nth-child(2) { animation-delay: 0.2s; }
+        .stat-item:nth-child(3) { animation-delay: 0.3s; }
+        .stat-item:nth-child(4) { animation-delay: 0.4s; }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: var(--text-light);
+            font-weight: 500;
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-tag {
+            font-family: 'Fira Code', monospace;
+            color: var(--accent);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Expertise Grid */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .expertise-card {
+            background: white;
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .expertise-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transform: scaleX(0);
+            transition: transform 0.3s;
+        }
+        
+        .expertise-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(8, 131, 149, 0.15);
+            border-color: var(--accent);
+        }
+        
+        .expertise-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .expertise-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .expertise-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .expertise-desc {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .tech-tag {
+            background: var(--bg-light);
+            border: 1px solid var(--border);
+            padding: 0.3rem 0.8rem;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-family: 'Fira Code', monospace;
+        }
+        
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--accent), var(--primary));
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            padding-left: 2rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -3.5rem;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 3px solid var(--bg-light);
+            box-shadow: 0 0 0 3px var(--accent);
+        }
+        
+        .timeline-period {
+            font-family: 'Fira Code', monospace;
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-role {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-org {
+            color: var(--text-light);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+        
+        .timeline-desc {
+            color: var(--text-dark);
+            line-height: 1.7;
+        }
+        
+        /* Projects/Achievements */
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .achievement-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid var(--border);
+            transition: all 0.3s;
+        }
+        
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(8, 131, 149, 0.15);
+        }
+        
+        .achievement-header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            padding: 1.5rem;
+            color: white;
+        }
+        
+        .achievement-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .achievement-meta {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .achievement-body {
+            padding: 1.5rem;
+        }
+        
+        .achievement-desc {
+            color: var(--text-dark);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        
+        .achievement-impact {
+            background: var(--bg-light);
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--success);
+        }
+        
+        .achievement-impact-label {
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: white;
+            text-align: center;
+            padding: 5rem 2rem;
+            margin-top: 5rem;
+        }
+        
+        .contact .section-title {
+            color: white;
+        }
+        
+        .contact .section-subtitle {
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.3s;
+        }
+        
+        .contact-link:hover {
+            transform: translateY(-3px);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--bg-dark);
+            color: var(--text-light);
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .timeline {
+                padding-left: 2rem;
+            }
+            
+            .expertise-grid,
+            .achievement-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Scroll animations */
+        .scroll-fade {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .scroll-fade.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-grid"></div>
+    
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">SK</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-tag">Healthcare Data & AI Executive</div>
+            <h1>
+                Bridging <span class="highlight">Clinical Expertise</span><br>
+                with <span class="highlight">AI Innovation</span>
+            </h1>
+            <p class="hero-subtitle">
+                Transforming population health through advanced analytics, machine learning, 
+                and data-driven decision making. 15+ years driving impact at the intersection 
+                of medicine, epidemiology, and technology.
+            </p>
+            <div class="credentials">
+                <span class="credential-badge">MBBS</span>
+                <span class="credential-badge">MPH Epidemiology</span>
+                <span class="credential-badge">MS Data Science (In Progress)</span>
+                <span class="credential-badge">CPHIMS</span>
+                <span class="credential-badge">CHP</span>
+            </div>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                <a href="#achievements" class="btn btn-secondary">View Work</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Stats -->
+    <div class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <div class="stat-number">$27.8M</div>
+                <div class="stat-label">Grant Portfolio Managed</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">15+</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">11</div>
+                <div class="stat-label">Team Members Led</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">35+</div>
+                <div class="stat-label">Published Presentations</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Expertise Section -->
+    <section id="expertise">
+        <div class="section-header scroll-fade">
+            <div class="section-tag">// Core Competencies</div>
+            <h2 class="section-title">Technical Expertise</h2>
+            <p class="section-subtitle">
+                Specialized in building production-grade AI/ML systems for healthcare analytics 
+                and population health surveillance
+            </p>
+        </div>
+        
+        <div class="expertise-grid">
+            <div class="expertise-card scroll-fade">
+                <div class="expertise-icon">🤖</div>
+                <h3 class="expertise-title">Generative AI & LLMs</h3>
+                <p class="expertise-desc">
+                    Building RAG pipelines, multi-agent systems, and production AI applications 
+                    using OpenAI API, LangChain, and LangGraph for healthcare decision support.
+                </p>
+                <div class="tech-tags">
+                    <span class="tech-tag">OpenAI API</span>
+                    <span class="tech-tag">LangChain</span>
+                    <span class="tech-tag">RAG</span>
+                    <span class="tech-tag">Vector DBs</span>
+                </div>
+            </div>
+            
+            <div class="expertise-card scroll-fade">
+                <div class="expertise-icon">☁️</div>
+                <h3 class="expertise-title">Cloud & MLOps</h3>
+                <p class="expertise-desc">
+                    Architecting cloud-native data pipelines on AWS (Bedrock, SageMaker, Lambda) 
+                    with automated ETL workflows and model deployment.
+                </p>
+                <div class="tech-tags">
+                    <span class="tech-tag">AWS Bedrock</span>
+                    <span class="tech-tag">SageMaker</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">Azure</span>
+                </div>
+            </div>
+            
+            <div class="expertise-card scroll-fade">
+                <div class="expertise-icon">📊</div>
+                <h3 class="expertise-title">Advanced Analytics & ML</h3>
+                <p class="expertise-desc">
+                    Implementing predictive models, time series forecasting, and clustering algorithms 
+                    using Python, R, and modern ML frameworks.
+                </p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">Scikit-learn</span>
+                    <span class="tech-tag">TensorFlow</span>
+                    <span class="tech-tag">PyTorch</span>
+                </div>
+            </div>
+            
+            <div class="expertise-card scroll-fade">
+                <div class="expertise-icon">🗺️</div>
+                <h3 class="expertise-title">Geospatial Analytics</h3>
+                <p class="expertise-desc">
+                    Leading spatial analysis initiatives using ArcGIS Pro, QGIS, and Python geospatial 
+                    libraries for health disparities identification and resource optimization.
+                </p>
+                <div class="tech-tags">
+                    <span class="tech-tag">ArcGIS Pro</span>
+                    <span class="tech-tag">GeoPandas</span>
+                    <span class="tech-tag">PostGIS</span>
+                    <span class="tech-tag">QGIS</span>
+                </div>
+            </div>
+            
+            <div class="expertise-card scroll-fade">
+                <div class="expertise-icon">📈</div>
+                <h3 class="expertise-title">Business Intelligence</h3>
+                <p class="expertise-desc">
+                    Designing executive dashboards and interactive visualizations using Power BI, 
+                    Tableau, and R Shiny for strategic decision support.
+                </p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Power BI</span>
+                    <span class="tech-tag">Tableau</span>
+                    <span class="tech-tag">R Shiny</span>
+                    <span class="tech-tag">DAX</span>
+                </div>
+            </div>
+            
+            <div class="expertise-card scroll-fade">
+                <div class="expertise-icon">🏥</div>
+                <h3 class="expertise-title">Healthcare Informatics</h3>
+                <p class="expertise-desc">
+                    Integrating EHR systems (Epic, HL7, FHIR) with public health surveillance 
+                    infrastructure while ensuring HIPAA compliance and data governance.
+                </p>
+                <div class="tech-tags">
+                    <span class="tech-tag">Epic</span>
+                    <span class="tech-tag">HL7</span>
+                    <span class="tech-tag">FHIR</span>
+                    <span class="tech-tag">HIPAA</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Experience Section -->
+    <section id="experience" style="background: white; margin: 0 0; padding: 5rem 2rem;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div class="section-header scroll-fade">
+                <div class="section-tag">// Career Journey</div>
+                <h2 class="section-title">Professional Experience</h2>
+                <p class="section-subtitle">
+                    A strategic evolution from clinical medicine to data science and AI innovation
+                </p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item scroll-fade">
+                    <div class="timeline-period">2024 — PRESENT</div>
+                    <h3 class="timeline-role">Data Consultant – AI/ML & Healthcare Analytics</h3>
+                    <div class="timeline-org">Independent Consultant | Remote</div>
+                    <p class="timeline-desc">
+                        Leading AI/ML consulting projects integrating generative AI (OpenAI, LangChain, RAG) 
+                        with healthcare analytics. Designing cloud-native data pipelines on AWS and building 
+                        interactive BI dashboards for executive decision support.
+                    </p>
+                </div>
+                
+                <div class="timeline-item scroll-fade">
+                    <div class="timeline-period">2020 — 2024</div>
+                    <h3 class="timeline-role">Director, Office of Health Surveillance and Research</h3>
+                    <div class="timeline-org">Mississippi State Department of Health</div>
+                    <p class="timeline-desc">
+                        Directed statewide data modernization managing $27.8M portfolio across 7 major programs. 
+                        Established new office, led team of 11 data scientists and epidemiologists. Implemented 
+                        AI/ML models for drug overdose prediction and pioneered Mississippi PLACES project using 
+                        Bayesian modeling for 1,200+ census tracts.
+                    </p>
+                </div>
+                
+                <div class="timeline-item scroll-fade">
+                    <div class="timeline-period">2014 — 2020</div>
+                    <h3 class="timeline-role">Senior Epidemiologist Supervisor & Lead GIS Analyst</h3>
+                    <div class="timeline-org">Mississippi State Department of Health</div>
+                    <p class="timeline-desc">
+                        Supervised chronic disease and MCH epidemiology programs. Built BI infrastructure with 
+                        Power BI and Tableau. Led geospatial analysis initiatives and integrated Epic EHR data 
+                        with surveillance systems, improving data quality by 40%.
+                    </p>
+                </div>
+                
+                <div class="timeline-item scroll-fade">
+                    <div class="timeline-period">2011 — 2014</div>
+                    <h3 class="timeline-role">Chronic Disease Epidemiologist</h3>
+                    <div class="timeline-org">Mississippi State Department of Health</div>
+                    <p class="timeline-desc">
+                        Managed chronic disease epidemiology program conducting complex investigations. 
+                        Established GIS-based surveillance infrastructure and pioneered health disparities 
+                        analysis framework using census tract-level socioeconomic data.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Achievements Section -->
+    <section id="achievements">
+        <div class="section-header scroll-fade">
+            <div class="section-tag">// Impact & Innovation</div>
+            <h2 class="section-title">Key Achievements</h2>
+            <p class="section-subtitle">
+                Transforming healthcare delivery through data-driven innovation
+            </p>
+        </div>
+        
+        <div class="achievement-grid">
+            <div class="achievement-card scroll-fade">
+                <div class="achievement-header">
+                    <h3 class="achievement-title">Mississippi PLACES Project</h3>
+                    <div class="achievement-meta">2020-2023 | Data Modernization</div>
+                </div>
+                <div class="achievement-body">
+                    <p class="achievement-desc">
+                        First-of-its-kind statewide small-area estimation system using Bayesian hierarchical 
+                        models to generate 27 chronic disease measures for all 82 counties and 1,200+ census tracts.
+                    </p>
+                    <div class="achievement-impact">
+                        <div class="achievement-impact-label">Impact</div>
+                        Enabled precision public health targeting and informed resource allocation decisions 
+                        across the state's most vulnerable communities.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="achievement-card scroll-fade">
+                <div class="achievement-header">
+                    <h3 class="achievement-title">AI-Powered Overdose Prediction</h3>
+                    <div class="achievement-meta">2019-2021 | Machine Learning</div>
+                </div>
+                <div class="achievement-body">
+                    <p class="achievement-desc">
+                        Implemented ML models using Python and scikit-learn for prescription drug overdose 
+                        prediction through geospatial risk modeling and location intelligence.
+                    </p>
+                    <div class="achievement-impact">
+                        <div class="achievement-impact-label">Impact</div>
+                        Reduced emergency response time by 30% and enabled proactive intervention 
+                        in high-risk geographic areas.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="achievement-card scroll-fade">
+                <div class="achievement-header">
+                    <h3 class="achievement-title">Data Governance Framework</h3>
+                    <div class="achievement-meta">2018-2020 | Infrastructure</div>
+                </div>
+                <div class="achievement-body">
+                    <p class="achievement-desc">
+                        Developed comprehensive enterprise data governance framework ensuring HIPAA/FISMA 
+                        compliance and established standardized data quality protocols agency-wide.
+                    </p>
+                    <div class="achievement-impact">
+                        <div class="achievement-impact-label">Impact</div>
+                        Recognized as subject matter expert in privacy and security rules. Framework 
+                        adopted as model for other state health departments.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="achievement-card scroll-fade">
+                <div class="achievement-header">
+                    <h3 class="achievement-title">Health Disparities Report</h3>
+                    <div class="achievement-meta">2023 | Policy Impact</div>
+                </div>
+                <div class="achievement-body">
+                    <p class="achievement-desc">
+                        Lead author of Mississippi Health Disparities and Inequities Report, 
+                        comprehensive analysis of health equity gaps across demographic and geographic dimensions.
+                    </p>
+                    <div class="achievement-impact">
+                        <div class="achievement-impact-label">Impact</div>
+                        Cited in state legislature policy discussions and directly informed 
+                        health equity initiatives and funding decisions.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="achievement-card scroll-fade">
+                <div class="achievement-header">
+                    <h3 class="achievement-title">EHR Integration Pipeline</h3>
+                    <div class="achievement-meta">2016-2019 | Interoperability</div>
+                </div>
+                <div class="achievement-body">
+                    <p class="achievement-desc">
+                        Integrated Epic EHR data (Cogito, Caboodle, Clarity) with public health surveillance 
+                        systems using SQL-based ETL pipelines and HL7 standards.
+                    </p>
+                    <div class="achievement-impact">
+                        <div class="achievement-impact-label">Impact</div>
+                        Improved data quality, timeliness, and coding consistency by 40%, enabling 
+                        near real-time population health monitoring.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="achievement-card scroll-fade">
+                <div class="achievement-header">
+                    <h3 class="achievement-title">$27.8M Grant Portfolio</h3>
+                    <div class="achievement-meta">2020-2028 | Research Leadership</div>
+                </div>
+                <div class="achievement-body">
+                    <p class="achievement-desc">
+                        Principal Investigator/Research Supervisor on 7 major CDC/HRSA grants spanning 
+                        cardiovascular health, diabetes equity, cancer prevention, and Alzheimer's disease.
+                    </p>
+                    <div class="achievement-impact">
+                        <div class="achievement-impact-label">Impact</div>
+                        Supported comprehensive statewide initiatives improving health outcomes 
+                        across multiple chronic disease domains.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-header">
+            <div class="section-tag" style="color: rgba(255,255,255,0.8);">// Let's Connect</div>
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="section-subtitle">
+                Open to opportunities in healthcare analytics, AI/ML leadership, 
+                and health informatics consulting
+            </p>
+        </div>
+        <div class="contact-links">
+            <a href="mailto:Sai.Kurmana@gmail.com" class="contact-link">
+                <span>📧</span> Sai.Kurmana@gmail.com
+            </a>
+            <a href="https://linkedin.com/in/SaiKurmana" target="_blank" class="contact-link">
+                <span>💼</span> LinkedIn
+            </a>
+            <a href="tel:913-207-9628" class="contact-link">
+                <span>📱</span> 913-207-9628
+            </a>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Sai Kurmana. Built with precision and purpose.</p>
+    </footer>
+    
+    <script>
+        // Scroll animation observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.scroll-fade').forEach(el => observer.observe(el));
+        
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
